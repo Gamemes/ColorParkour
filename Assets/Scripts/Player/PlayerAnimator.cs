@@ -1,13 +1,15 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace TarodevController {
+namespace PlayerController
+{
     /// <summary>
     /// This is a pretty filthy script. I was just arbitrarily adding to it as I went.
     /// You won't find any programming prowess here.
     /// This is a supplementary script to help with effects and animation. Basically a juice factory.
     /// </summary>
-    public class PlayerAnimator : MonoBehaviour {
+    public class PlayerAnimator : MonoBehaviour
+    {
         [SerializeField] private Animator _anim;
         [SerializeField] private AudioSource _source;
         [SerializeField] private LayerMask _groundMask;
@@ -26,7 +28,8 @@ namespace TarodevController {
 
         void Awake() => _player = GetComponentInParent<IPlayerController>();
 
-        void Update() {
+        void Update()
+        {
             if (_player == null) return;
 
             // Flip the sprite
@@ -40,18 +43,21 @@ namespace TarodevController {
             _anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, Mathf.Abs(_player.Input.X)));
 
             // Splat
-            if (_player.LandingThisFrame) {
+            if (_player.LandingThisFrame)
+            {
                 _anim.SetTrigger(GroundedKey);
                 _source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
             }
 
             // Jump effects
-            if (_player.JumpingThisFrame) {
+            if (_player.JumpingThisFrame)
+            {
                 _anim.SetTrigger(JumpKey);
                 _anim.ResetTrigger(GroundedKey);
 
                 // Only play particles when grounded (avoid coyote)
-                if (_player.Grounded) {
+                if (_player.Grounded)
+                {
                     SetColor(_jumpParticles);
                     SetColor(_launchParticles);
                     _jumpParticles.Play();
@@ -59,21 +65,24 @@ namespace TarodevController {
             }
 
             // Play landing effects and begin ground movement effects
-            if (!_playerGrounded && _player.Grounded) {
+            if (!_playerGrounded && _player.Grounded)
+            {
                 _playerGrounded = true;
                 _moveParticles.Play();
                 _landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
                 SetColor(_landParticles);
                 _landParticles.Play();
             }
-            else if (_playerGrounded && !_player.Grounded) {
+            else if (_playerGrounded && !_player.Grounded)
+            {
                 _playerGrounded = false;
                 _moveParticles.Stop();
             }
 
             // Detect ground color
             var groundHit = Physics2D.Raycast(transform.position, Vector3.down, 2, _groundMask);
-            if (groundHit && groundHit.transform.TryGetComponent(out SpriteRenderer r)) {
+            if (groundHit && groundHit.transform.TryGetComponent(out SpriteRenderer r))
+            {
                 _currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
                 SetColor(_moveParticles);
             }
@@ -81,15 +90,18 @@ namespace TarodevController {
             _movement = _player.RawMovement; // Previous frame movement is more valuable
         }
 
-        private void OnDisable() {
+        private void OnDisable()
+        {
             _moveParticles.Stop();
         }
 
-        private void OnEnable() {
+        private void OnEnable()
+        {
             _moveParticles.Play();
         }
 
-        void SetColor(ParticleSystem ps) {
+        void SetColor(ParticleSystem ps)
+        {
             var main = ps.main;
             main.startColor = _currentGradient;
         }
