@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class TrapPlatform : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
     [SerializeField] private bool isCanBeTouch;
+    private SpriteRenderer spriteRenderer;
     private void Start()
     {
-        player = GameObject.Find("Player");
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other);
-        if(other.gameObject == player && isCanBeTouch == true)
+        if (other.tag == "Player" && isCanBeTouch == true)
         {
             Player.PlayerDie.PlayerDying.Invoke();
         }
@@ -21,7 +21,7 @@ public class TrapPlatform : MonoBehaviour
 
     private void IsChangeColor()
     {
-        if (gameObject.GetComponent<SpriteRenderer>().color.a ==1)
+        if (spriteRenderer.color.a == 1)
         {
             isCanBeTouch = true;
         }
