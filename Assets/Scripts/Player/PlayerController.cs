@@ -343,7 +343,7 @@ namespace PlayerController
                 Debug.Log("sprint");
                 _moveClamp = 40f;
 
-                _acceleration *= 2;
+                _acceleration *= 3;
                 _isSprint = true;
                 _sprintTime = 0f;
             }
@@ -355,12 +355,14 @@ namespace PlayerController
                 {
                     _isSprint = false;
                     _moveClamp = 13f;
-                    _acceleration /= 2;
+                    _acceleration /= 3;
                     _lastSprintTime = 0f;
                 }
             }
             else
             {
+                if (JumpingThisFrame)
+                    _lastSprintTime += _sprintIntervalTime;
                 _lastSprintTime += Time.deltaTime;
             }
         }
