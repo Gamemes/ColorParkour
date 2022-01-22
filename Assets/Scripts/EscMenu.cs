@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EscMenu : MonoBehaviour
 {
-    [SerializeField]private bool esc = false;
-    public GameObject EscObject = null;         //ĞèÒªÊÖ¶¯²âÊÔ
+    [SerializeField] private bool esc = false;
+    public GameObject EscObject = null;         //éœ€è¦æ‰‹åŠ¨æµ‹è¯•
     public void QuitGame()
     {
         SceneManager.LoadScene(0);
@@ -36,7 +36,7 @@ public class EscMenu : MonoBehaviour
 
     public void QuXiao()
     {
-        if(esc == true)
+        if (esc == true)
         {
             esc = false;
         }
