@@ -4,12 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Platform;
 
+public struct UserInfo
+{
+    string name;
+}
+
 public class MyGameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public PlatformColor currentColor { get; private set; } = PlatformColor.WHITE;
     public static MyGameManager instance;
     public static Action<PlatformColor> changeCurrentColor;
+    public UserInfo currentUserInfo;
+
     public Vector3 reBornPos;
     private void Awake()
     {
