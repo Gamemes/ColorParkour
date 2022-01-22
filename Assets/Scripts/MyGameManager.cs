@@ -32,6 +32,7 @@ public class MyGameManager : MonoBehaviour
     private void Start()
     {
         changeCurrentColor?.Invoke(this.currentColor);
+        currentUserInfo = new UserInfo();
     }
     public PlatformColor changeColor()
     {

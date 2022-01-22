@@ -18,7 +18,22 @@ public class SawControl : MonoBehaviour
     {
         if (isRunning)
         {
-
+            float z = transform.rotation.z - 0.2f * Time.deltaTime;
+            if (z <= -1)
+                z = 0;
+            this.transform.rotation = new Quaternion(0f, 0f, z, transform.rotation.w);
+            if (idx < points.Count)
+            {
+                this.transform.position = Vector3.MoveTowards(transform.position, points[idx].position, speed * Time.deltaTime);
+                if ((transform.position - points[idx].position).magnitude <= 1)
+                {
+                    idx++;
+                }
+            }
+            else
+            {
+                isRunning = false;
+            }
         }
     }
 }
