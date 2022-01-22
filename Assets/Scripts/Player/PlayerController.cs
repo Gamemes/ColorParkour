@@ -331,12 +331,14 @@ namespace PlayerController
 
         #region Sprint
         [Header("Sprint")]
-        [SerializeField] private float _sprintLastTime = 1f;
+        [SerializeField] private float _sprintLastTime = 0.2f;
+        [SerializeField] private float _sprintIntervalTime = 1f;
         private float _sprintTime = 0f;
+        private float _lastSprintTime = 0f;
         private bool _isSprint = false;
         private void CalculateSprint()
         {
-            if (Input.SprintDown && !_isSprint)
+            if (Input.SprintDown && _lastSprintTime >= _sprintIntervalTime && !_isSprint)
             {
                 Debug.Log("sprint");
                 _moveClamp = 40f;
@@ -353,7 +355,12 @@ namespace PlayerController
                     _isSprint = false;
                     _moveClamp = 13f;
                     _acceleration /= 2;
+                    _lastSprintTime = 0f;
                 }
+            }
+            else
+            {
+                _lastSprintTime += Time.deltaTime;
             }
         }
         #endregion
