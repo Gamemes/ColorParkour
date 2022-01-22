@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Platform;
 
-public struct UserInfo
+public class UserInfo
 {
-    string name;
+    public string name;
 }
 
 public class MyGameManager : MonoBehaviour
