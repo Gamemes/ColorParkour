@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrapPlatform : MonoBehaviour
 {
-    [SerializeField] private bool isCanBeTouch;
+    [SerializeField] private bool isCanBeTouch = true;
     private SpriteRenderer spriteRenderer;
     private void Start()
     {
