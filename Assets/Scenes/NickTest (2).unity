@@ -1311,6 +1311,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2882772106489397945, guid: 1cefbef63ec8b6e40803645370b6f372, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882772106489397945, guid: 1cefbef63ec8b6e40803645370b6f372, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9108235
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882772106489397945, guid: 1cefbef63ec8b6e40803645370b6f372, type: 3}
+      propertyPath: m_Color.r
+      value: 0.98
+      objectReference: {fileID: 0}
     - target: {fileID: 2882772106489398086, guid: 1cefbef63ec8b6e40803645370b6f372, type: 3}
       propertyPath: m_Name
       value: CheckPoint
