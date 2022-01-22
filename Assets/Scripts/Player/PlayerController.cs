@@ -342,6 +342,7 @@ namespace PlayerController
             {
                 Debug.Log("sprint");
                 _moveClamp = 40f;
+
                 _acceleration *= 2;
                 _isSprint = true;
                 _sprintTime = 0f;
