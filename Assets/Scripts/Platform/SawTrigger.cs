@@ -19,7 +19,11 @@ public class SawTrigger : MonoBehaviour
     {
         if (other.tag.Equals("Player"))
         {
-            sawControl.isRunning = true;
+            if (!sawControl.isRunning)
+            {
+                sawControl.isRunning = true;
+                Player.PlayerDie.PlayerDying += sawControl.onPlayerDie;
+            }
         }
     }
 }

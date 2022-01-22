@@ -3831,6 +3831,7 @@ GameObject:
   - component: {fileID: 1128623748}
   - component: {fileID: 1128623747}
   - component: {fileID: 1128623749}
+  - component: {fileID: 1128623750}
   m_Layer: 0
   m_Name: "\u952F\u7247"
   m_TagString: Untagged
@@ -3917,11 +3918,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRunning: 0
   speed: 5
+  rotationSpeed: 240
   points:
+  - {fileID: 1128623748}
   - {fileID: 96043385}
   - {fileID: 1309541221}
   - {fileID: 79807433}
   - {fileID: 1858770732}
+--- !u!58 &1128623750
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128623746}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6.09
 --- !u!4 &1131240373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1512960020639395746, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
@@ -6879,7 +6898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13887da51eec9347a0b1952c9b9ab90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sawControl: {fileID: 0}
+  sawControl: {fileID: 1128623749}
 --- !u!1 &1973774807
 GameObject:
   m_ObjectHideFlags: 0

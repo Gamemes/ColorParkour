@@ -7,21 +7,26 @@ public class SawControl : MonoBehaviour
     // Start is called before the first frame update
     public bool isRunning = false;
     public float speed = 2f;
+    public float rotationSpeed = 0.5f;
     public List<Transform> points;
+    private Vector3 initPos;
     private int idx = 0;
     void Start()
     {
+        initPos = transform.position;
     }
-
+    public void onPlayerDie()
+    {
+        Debug.Log("back");
+        this.transform.position = initPos;
+        idx = 0;
+    }
     // Update is called once per frame
     void Update()
     {
         if (isRunning)
         {
-            float z = transform.rotation.z - 0.2f * Time.deltaTime;
-            if (z <= -1)
-                z = 0;
-            this.transform.rotation = new Quaternion(0f, 0f, z, transform.rotation.w);
+            this.transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z - rotationSpeed * Time.deltaTime);
             if (idx < points.Count)
             {
                 this.transform.position = Vector3.MoveTowards(transform.position, points[idx].position, speed * Time.deltaTime);
@@ -32,8 +37,16 @@ public class SawControl : MonoBehaviour
             }
             else
             {
+                Player.PlayerDie.PlayerDying -= this.onPlayerDie;
                 isRunning = false;
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag.Equals("Player") && isRunning)
+        {
+            Player.PlayerDie.PlayerDying.Invoke();
         }
     }
 }
