@@ -367,5 +367,13 @@ namespace PlayerController
             }
         }
         #endregion
+
+        #region Special Fun
+        public void reSetSpeed()
+        {
+            this._currentHorizontalSpeed = 0f;
+            this._currentVerticalSpeed = 0f;
+        }
+        #endregion
     }
 }

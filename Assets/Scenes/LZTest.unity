@@ -1082,7 +1082,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34719648014d00142aed9c101d8b7518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   isCanBeTouch: 0
 --- !u!1 &1538326238
 GameObject:

@@ -10,6 +10,7 @@ public class MyGameManager : MonoBehaviour
     public PlatformColor currentColor { get; private set; } = PlatformColor.WHITE;
     public static MyGameManager instance;
     public static Action<PlatformColor> changeCurrentColor;
+    public Vector3 reBornPos;
     private void Awake()
     {
         if (instance == null)
