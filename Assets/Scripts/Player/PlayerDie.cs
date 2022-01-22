@@ -34,9 +34,5 @@ namespace Player
                 PlayerDying.Invoke();
             }
         }
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            Debug.Log("enter");
-        }
     }
 }
