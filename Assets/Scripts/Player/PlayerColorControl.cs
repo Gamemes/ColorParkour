@@ -10,6 +10,8 @@ namespace Player
     {
         // Start is called before the first frame update
         private PlayerController playerController;
+        public AudioSource audioSource;
+        public AudioClip changeSound;
         public LayerMask whiteGround;
         public LayerMask blackGround;
         void Start()
@@ -17,6 +19,11 @@ namespace Player
             playerController = GetComponent<PlayerController>();
             MyGameManager.changeCurrentColor += this.changeColor;
             changeColor(MyGameManager.instance.currentColor);
+            audioSource.loop = false;
+            audioSource.playOnAwake = false;
+            audioSource.clip = changeSound;
+            audioSource.volume = 0.5f;
+            audioSource.Stop();
         }
         void changeColor(PlatformColor color)
         {
@@ -35,6 +42,7 @@ namespace Player
             if (Input.GetMouseButtonDown(1))
             {
                 Debug.Log("change color");
+                audioSource.Play();
                 PlatformColor color = MyGameManager.instance.changeColor();
             }
         }
