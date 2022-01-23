@@ -28,7 +28,9 @@ public class MyGameManager : MonoBehaviour
     {
         if (instance == null)
         {
+            DontDestroyOnLoad(gameObject);
             instance = this;
+            this.currentUserInfo = new UserInfo();
         }
         else
         {
@@ -38,7 +40,6 @@ public class MyGameManager : MonoBehaviour
     private void Start()
     {
         changeCurrentColor?.Invoke(this.currentColor);
-        currentUserInfo = new UserInfo();
     }
     public PlatformColor changeColor()
     {

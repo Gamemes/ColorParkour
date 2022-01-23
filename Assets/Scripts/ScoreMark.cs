@@ -16,6 +16,7 @@ public class ScoreMark : MonoBehaviour
     {
         Player.PlayerDie.PlayerDying += this.updateDeathUI;
         ClearanceMenu.onGameFinished += this.onGameFinished;
+        StartCoroutine(PostGameDate("http://110.42.142.7:5556/rankinglist/upload"));
     }
     void onGameFinished()
     {
@@ -43,6 +44,7 @@ public class ScoreMark : MonoBehaviour
     {
         Debug.Log("upload form");
         WWWForm form = new WWWForm();
+        Debug.Log(MyGameManager.instance.currentUserInfo.name);
         form.AddField("name", MyGameManager.instance.currentUserInfo.name);
         form.AddField("finishTime", this.durationTime.ToString());
         form.AddField("deathTimes", deathTime.ToString());
