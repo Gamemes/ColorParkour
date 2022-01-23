@@ -41,7 +41,7 @@ namespace Player
         {
             if (Input.GetMouseButtonDown(1))
             {
-                Debug.Log("change color");
+                //Debug.Log("change color");
                 audioSource.Play();
                 PlatformColor color = MyGameManager.instance.changeColor();
             }

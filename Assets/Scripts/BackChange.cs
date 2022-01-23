@@ -33,6 +33,10 @@ public class BackChange : MonoBehaviour
             this.spriteRenderer.sprite = drakSprite;
         }
     }
+    private void OnDestroy()
+    {
+        MyGameManager.changeCurrentColor -= this.onChangeColor;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -41,7 +45,5 @@ public class BackChange : MonoBehaviour
         prePos = cpos;
         offsetPos.Set(offsetPos.x, offsetPos.y, 0);
         this.transform.position = cpos + offsetPos + new Vector3(0, 0, 10);
-
-
     }
 }

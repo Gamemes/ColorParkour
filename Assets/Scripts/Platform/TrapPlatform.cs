@@ -12,7 +12,7 @@ public class TrapPlatform : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
+        //Debug.Log(other);
         if (other.tag == "Player" && isCanBeTouch == true)
         {
             Player.PlayerDie.PlayerDying.Invoke();

@@ -36,7 +36,7 @@ namespace Platform
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("enter");
+            //Debug.Log("enter");
             if (other.tag.Equals("Player"))
             {
                 isPlayerOnPlatform = true;

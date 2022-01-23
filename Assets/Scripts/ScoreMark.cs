@@ -9,10 +9,16 @@ public class ScoreMark : MonoBehaviour
     public Text timeUI;
     public Text deathUI;
     public int deathTime = 0;
+    private bool isFinished = false;
     public float durationTime = 0f;
     void Start()
     {
         Player.PlayerDie.PlayerDying += this.updateDeathUI;
+        ClearanceMenu.onGameFinished += this.onGameFinished;
+    }
+    void onGameFinished()
+    {
+        isFinished = true;
     }
     void updateDeathUI()
     {
@@ -21,8 +27,14 @@ public class ScoreMark : MonoBehaviour
     }
     void updateTimeUI()
     {
-        durationTime += Time.deltaTime;
+        if (!isFinished)
+            durationTime += Time.deltaTime;
         timeUI.text = $"{durationTime:0}";
+    }
+    private void OnDestroy()
+    {
+        Player.PlayerDie.PlayerDying -= this.updateDeathUI;
+        ClearanceMenu.onGameFinished -= this.onGameFinished;
     }
     // Update is called once per frame
     void Update()
