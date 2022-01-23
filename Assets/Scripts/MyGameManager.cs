@@ -7,6 +7,12 @@ using Platform;
 public class UserInfo
 {
     public string name;
+    public string uniqueName;
+    public UserInfo()
+    {
+        name = SystemInfo.deviceUniqueIdentifier;
+        uniqueName = SystemInfo.deviceUniqueIdentifier;
+    }
 }
 
 public class MyGameManager : MonoBehaviour

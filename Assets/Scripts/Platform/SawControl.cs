@@ -46,6 +46,10 @@ public class SawControl : MonoBehaviour
             }
         }
     }
+    private void OnDestroy()
+    {
+        Player.PlayerDie.PlayerDying -= this.onPlayerDie;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Equals("Player") && isRunning)

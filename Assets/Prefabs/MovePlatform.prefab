@@ -1,22 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &3402787771934015085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4307196529661275616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b88fa5975d66254d9d0a72e3539ec21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  wayPoints:
-  - {fileID: 3402787772700227789}
-  - {fileID: 3402787772056154449}
-  index: 0
 --- !u!1 &3402787771936866712
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +93,23 @@ Transform:
   m_Father: {fileID: 3402787771936866713}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3402787771934015085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307196529661275616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b88fa5975d66254d9d0a72e3539ec21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 5
+  wayPoints:
+  - {fileID: 3402787772700227789}
+  - {fileID: 3402787772056154449}
+  index: 0
 --- !u!1001 &3402787772163244638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,16 +122,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1512960020639395746, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.44203123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395746, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5484
       objectReference: {fileID: 0}
     - target: {fileID: 1512960020639395746, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.010000229
+      value: 0.86713
       objectReference: {fileID: 0}
     - target: {fileID: 1512960020639395746, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.01999998
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 1512960020639395746, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
       propertyPath: m_LocalPosition.z
@@ -165,6 +169,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_Size.x
+      value: 10.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_Size.y
+      value: 1.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.8869238
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.31362206
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.68039423
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.73759246
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 7.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 15.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 21.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 4.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 10.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395772, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512960020639395773, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab31fc83c52ac8740bfef102e4be26a9, type: 3}
     - target: {fileID: 1512960020639395774, guid: 122553e70ae2e4044a656b2d266c7467, type: 3}
       propertyPath: m_Name
       value: WhitePlatform-Move
