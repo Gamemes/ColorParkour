@@ -7,6 +7,8 @@ public class EscMenu : MonoBehaviour
 {
     [SerializeField] private bool esc = false;
     public GameObject EscObject = null;         //需要手动测试
+    public bool gameIsOver = false;
+    [SerializeField] private GameObject clearanceMenu;
     public void QuitGame()
     {
         SceneManager.LoadScene(0);
@@ -15,11 +17,12 @@ public class EscMenu : MonoBehaviour
     private void Update()
     {
         IsEnterEsc();
+        GameIsOver();
     }
 
     private void IsEnterEsc()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && gameIsOver == false)
         {
             if (esc == false)
             {
@@ -39,6 +42,14 @@ public class EscMenu : MonoBehaviour
         if (esc == true)
         {
             esc = false;
+        }
+    }
+
+    private void GameIsOver()
+    {
+        if (clearanceMenu.activeInHierarchy)
+        {
+            gameIsOver = true;
         }
     }
 }
