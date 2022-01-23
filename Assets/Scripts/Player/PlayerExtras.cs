@@ -16,10 +16,10 @@ namespace PlayerController
         {
             FrameInput res = new FrameInput
             {
-                JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
+                JumpDown = UnityEngine.Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.J),
                 JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
                 X = UnityEngine.Input.GetAxisRaw("Horizontal"),
-                SprintDown = Input.GetMouseButtonDown(0)
+                SprintDown = Input.GetButtonDown("Sprint")
             };
             return res;
         }
