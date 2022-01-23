@@ -52,4 +52,9 @@ public class EscMenu : MonoBehaviour
             gameIsOver = true;
         }
     }
+
+    public void AgainGame()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
