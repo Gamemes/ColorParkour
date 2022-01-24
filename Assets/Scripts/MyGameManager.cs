@@ -7,7 +7,20 @@ using Platform;
 public class UserInfo
 {
     public string name;
-    public string uniqueName;
+    private string _uniqueName;
+    public string uniqueName
+    {
+        get
+        {
+            if (_uniqueName == SystemInfo.unsupportedIdentifier)
+                return name + SystemInfo.deviceName;
+            return _uniqueName;
+        }
+        private set
+        {
+            _uniqueName = value;
+        }
+    }
     public UserInfo()
     {
         name = SystemInfo.deviceUniqueIdentifier;

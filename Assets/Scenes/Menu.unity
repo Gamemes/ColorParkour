@@ -314,7 +314,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9071e743812431248b7ff64dc2e2811a, type: 3}
-    m_FontSize: 60
+    m_FontSize: 37
     m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 6
@@ -325,7 +325,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8BF7\u8F93\u5165\u540D\u79F0"
+  m_Text: "\u8BF7\u8F93\u5165\u540D\u79F0(\u5927\u4E8E3\u4E2A\u5B57\u7B26)"
 --- !u!222 &118656518
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1946,18 +1946,6 @@ MonoBehaviour:
       - m_Target: {fileID: 53094918}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: PlayGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 53094918}
-        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
-        m_MethodName: GetName
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

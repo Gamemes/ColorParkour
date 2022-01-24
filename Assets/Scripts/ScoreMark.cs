@@ -49,7 +49,6 @@ public class ScoreMark : MonoBehaviour
         form.AddField("finishTime", this.durationTime.ToString());
         form.AddField("deathTimes", deathTime.ToString());
         form.AddField("uniqueName", MyGameManager.instance.currentUserInfo.uniqueName);
-        Debug.Log(form);
         using (UnityWebRequest req = UnityWebRequest.Post(url, form))
         {
             yield return req.SendWebRequest();

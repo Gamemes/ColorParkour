@@ -8,6 +8,8 @@ public class GameMenu : MonoBehaviour
     public InputField inputObject;
     public void PlayGame()
     {
+        if (!GetName())
+            return;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -17,10 +19,12 @@ public class GameMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void GetName()
+    public bool GetName()
     {
+        if (inputObject.text.Length < 3)
+            return false;
         MyGameManager.instance.currentUserInfo.name = inputObject.text;
-        Debug.Log(inputObject.text);
-        Debug.Log(MyGameManager.instance.currentUserInfo.name);
+        Debug.Log($"name:{inputObject.text} uniqueName: {MyGameManager.instance.currentUserInfo.uniqueName}");
+        return true;
     }
 }

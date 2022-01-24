@@ -340,7 +340,6 @@ namespace PlayerController
         {
             if (Input.SprintDown && _lastSprintTime >= _sprintIntervalTime && !_isSprint)
             {
-                Debug.Log("sprint");
                 _moveClamp = 40f;
 
                 _acceleration *= 3;
